@@ -7,12 +7,14 @@ class UserNotifier(Observer):
 
     def update(self, book_title: str) -> None:
         print(
-            f"[{self.username} - Сповіщення]: Нова книга у каталозі - '{book_title}'!"
+            f"[{self.username} Сповіщення]: "
+            f"Нова книга у каталозі '{book_title}'"
         )
 
 
 class EmailAlert(Observer):
     def update(self, book_title: str) -> None:
         print(
-            f"[EmailAlert]: Надсилаємо email усім підписникам про книгу '{book_title}'."
+            f"[EmailAlert]: "
+            f"Надсилаємо email підписникам про книгу '{book_title}'."
               )

@@ -31,4 +31,6 @@ class LibrarySystem(BookSearch):
 
     def search_books(self, query: str) -> list:
         # Реалізація інтерфейсу BookSearch
-        return [book for book in self.catalog if query.lower() in book.title.lower()]
+        return [
+            book for book in self.catalog if query.lower() in book.title.lower()
+        ]

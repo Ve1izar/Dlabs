@@ -24,7 +24,6 @@ class TestBook(unittest.TestCase):
         """Перевірка магічного методу __str__ """
         self.assertEqual(str(self.book), "'Чистий код' (Роберт Мартін)")
 
-    # УВАГА: Наступні методи передбачають, що ти додаси логіку borrow() та return_book() у book.py
     def test_successful_borrow(self):
         """Успішне взяття книги зменшує кількість доступних копій"""
         # book.borrow() # Додай цей метод у book.py: self.availableCopies -= 1

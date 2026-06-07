@@ -16,7 +16,6 @@ class TestLibrarySystem(unittest.TestCase):
         self.book = Book("Роберт Мартін", "Чистий код", 2008, "12345", 3)
 
     def tearDown(self):
-        """Скидаємо стан синглтона після кожного тесту, щоб тести були ізольованими"""
         LibrarySystem._instance = None
         if hasattr(self.library, '_observers'):
             self.library._observers = []
@@ -39,7 +38,6 @@ class TestLibrarySystem(unittest.TestCase):
         self.assertNotIn(mock_observer, self.library._observers)
 
     def test_add_book_notifies_observers(self):
-        """Перевірка сповіщення всіх спостерігачів при додаванні книги"""
         mock_observer1 = Mock(spec=Observer)
         mock_observer2 = Mock(spec=Observer)
 
