@@ -4,12 +4,15 @@ import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from book import Book
+from book import Book  # noqa: E402
+
 
 class TestBook(unittest.TestCase):
     def setUp(self):
         # Ініціалізуємо книгу з ЛР5
-        self.book = Book("Роберт Мартін", "Чистий код", 2008, "978-0132350884", 3)
+        self.book = Book(
+            "Роберт Мартін", "Чистий код", 2008, "978-0132350884", 3
+        )
 
     def test_initial_state(self):
         """Перевірка початкового стану нової книги"""
@@ -42,7 +45,6 @@ class TestBook(unittest.TestCase):
         self.book.availableCopies += 1
         self.assertEqual(self.book.availableCopies, 3)
 
+
 if __name__ == '__main__':
     unittest.main()
-
-#...

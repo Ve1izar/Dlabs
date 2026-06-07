@@ -5,14 +5,16 @@ import os
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from user import Reader
-from interfaces import BookSearch
+from user import Reader  # noqa: E402
+from interfaces import BookSearch  # noqa: E402
 
 
 class TestReader(unittest.TestCase):
     def setUp(self):
         # Створюємо користувача
-        self.reader = Reader("Даніеле", "dan@email.com", "м. Рівне", "123-456")
+        self.reader = Reader(
+            "Даніеле", "dan@email.com", "м. Рівне", "123-456"
+        )
         # Створюємо mock-об'єкт для інтерфейсу пошуку
         self.mock_search_provider = Mock(spec=BookSearch)
 

@@ -1,6 +1,7 @@
 from interfaces import Observer, BookSearch
 from book import Book
 
+
 class LibrarySystem(BookSearch):
     _instance = None
 
